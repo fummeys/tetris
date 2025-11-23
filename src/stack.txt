@@ -1,0 +1,5 @@
+Built Tool: cmake 4.2
+Language: C++ 17 
+Graphic API: OpenGL(Raylib)
+Maths Library: Raylib
+Window and InputLayer: Raylib
