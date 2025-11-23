@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <raylib.h>
 
 int main() {
   std::printf("hello world\n");
