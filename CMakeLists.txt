@@ -18,7 +18,11 @@ set(BUILD_SHARED_LIBS true)
 #  build configs
 set(CMAKE_BUILD_TYPE "Debug")
 
+#  adding libraries
+add_subdirectory(lib/raylib)
+
 #  project configs
 project(snake VERSION 0.1)
 add_executable(${PROJECT_NAME} ${ENGINE_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ./src/include)
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib)

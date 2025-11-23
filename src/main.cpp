@@ -1,7 +1,16 @@
-#include <cstdio>
 #include <raylib.h>
 
 int main() {
-  std::printf("hello world\n");
-  return 0;
+    InitWindow(800, 400, "my snake game");
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        DrawText("Congrats! You created your first window!", 190, 200, 20,
+                LIGHTGRAY);
+        EndDrawing();
+    }
+
+    CloseWindow();
+    return 0;
 }

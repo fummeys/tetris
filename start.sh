@@ -14,7 +14,7 @@ makeApp(){
 }
 
 runApp(){
-    ./bin/RemmyEngine
+    ./bin/snake
 }
 
 while true; do
