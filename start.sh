@@ -14,7 +14,7 @@ makeApp(){
 }
 
 runApp(){
-    ./bin/snake
+    ./bin/tetris
 }
 
 while true; do

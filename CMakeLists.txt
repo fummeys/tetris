@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.2)
 
-file(GLOB_RECURSE ENGINE_SOURCES src/main.cpp)
+file(GLOB_RECURSE ENGINE_SOURCES src/main.cpp src/elements/*.cpp src/properties/*.cpp)
 
 # language settings
 set(CMAKE_CXX_STANDARD 17)
@@ -22,7 +22,7 @@ set(CMAKE_BUILD_TYPE "Debug")
 add_subdirectory(lib/raylib)
 
 #  project configs
-project(snake VERSION 0.1)
+project(tetris VERSION 0.1)
 add_executable(${PROJECT_NAME} ${ENGINE_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ./src/include)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
