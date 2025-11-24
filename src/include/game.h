@@ -9,6 +9,7 @@ class Game {
     public:
         Game();
         Grid grid;
+        bool gameOver;
         Block GetRandomBlock();
         std::vector<Block> ResetBlocks();
         void Draw();
@@ -26,5 +27,6 @@ class Game {
         void RotateBlock();
         void LockBlock();
         bool BlockFits();
+        void ResetGame();
 };
 

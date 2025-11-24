@@ -42,6 +42,6 @@ void Block::Rotate(){
 void Block::UndoRotation(){
     rotationState --;
     if (rotationState == -1) {
-        rotationState = orientation.size() - 1;
+        rotationState = 0;
     }
 }

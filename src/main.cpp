@@ -4,7 +4,7 @@
 #include <raylib.h>
 
 int main() {
-    InitWindow(400, 800, "Tetrica");
+    InitWindow(600, 820, "Tetrica");
     SetTargetFPS(75);
 
     Game game = Game();
