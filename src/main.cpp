@@ -1,4 +1,5 @@
 #include "colors.h"
+#include "drop.h"
 #include "game.h"
 #include <raylib.h>
 
@@ -12,7 +13,9 @@ int main() {
         BeginDrawing();
         ClearBackground(darkBlue);
         game.HandleInput();
-        game.MoveDown();
+        if (BlockDrop(0.8)) {
+            game.MoveDown();
+        }
         game.Draw();
         EndDrawing();
     }
