@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.2)
 
-file(GLOB_RECURSE ENGINE_SOURCES src/main.cpp src/elements/*.cpp src/properties/*.cpp)
+file(GLOB_RECURSE ENGINE_SOURCES src/*.cpp src/elements/*.cpp src/properties/*.cpp)
 
 # language settings
 set(CMAKE_CXX_STANDARD 17)
