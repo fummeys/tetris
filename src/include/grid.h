@@ -9,6 +9,7 @@ class Grid {
     void InitGrid();
     void PrintGrid();
     void Draw();
+    bool IsOutOfBounds(int row, int col);
 
   private:
     int numRows;

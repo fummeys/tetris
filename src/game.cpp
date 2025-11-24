@@ -1,7 +1,8 @@
 #include "game.h"
-#include "block.h"
+#include "position.h"
+
+#include <raylib.h>
 #include <stdlib.h>
-#include <vector>
 
 Game::Game() {
     grid = Grid();
@@ -29,4 +30,51 @@ std::vector<Block> Game::ResetBlocks() {
 void Game::Draw() {
     grid.Draw();
     currentBlock.Draw();
+}
+
+void Game::HandleInput() {
+    int keypressed = GetKeyPressed();
+
+    switch (keypressed) {
+    case KEY_LEFT:
+        MoveLeft();
+        break;
+    case KEY_RIGHT:
+        MoveRight();
+        break;
+    case KEY_DOWN:
+        MoveDown();
+        break;
+    }
+}
+
+void Game::MoveLeft() {
+    currentBlock.Move(0, -1);
+    if (IsOutOfBounds()) {
+        currentBlock.Move(0, 1);
+    }
+}
+
+void Game::MoveRight() {
+    currentBlock.Move(0, 1);
+    if (IsOutOfBounds()) {
+        currentBlock.Move(0, -1);
+    }
+}
+
+void Game::MoveDown() {
+    currentBlock.Move(1, 0);
+    if (IsOutOfBounds()) {
+        currentBlock.Move(-1, 0);
+    }
+}
+
+bool Game::IsOutOfBounds() {
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
+    for (Position item : tiles) {
+        if (grid.IsOutOfBounds(item.row, item.col)) {
+            return true;
+        }
+    }
+    return false;
 }

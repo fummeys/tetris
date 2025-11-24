@@ -1,5 +1,6 @@
 #include "grid.h"
 #include "colors.h"
+
 #include <cstdio>
 
 Grid::Grid() {
@@ -34,4 +35,12 @@ void Grid::Draw(){
             DrawRectangle(col * cellsize, row * cellsize, cellsize -1, cellsize -1, colors[cellvalue]);
         }
     }
+}
+
+bool Grid::IsOutOfBounds(int row, int col){
+    if(row < 0 || row >= numRows || col < 0 || col >= numCols){
+        std::printf("outside \n");
+        return true;
+    }
+    return false;
 }
