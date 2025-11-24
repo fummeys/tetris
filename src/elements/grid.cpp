@@ -28,18 +28,26 @@ void Grid::PrintGrid() {
     }
 }
 
-void Grid::Draw(){
+void Grid::Draw() {
     for (int row = 0; row < numRows; row++) {
         for (int col = 0; col < numCols; col++) {
             int cellvalue = grid[row][col];
-            DrawRectangle(col * cellsize, row * cellsize, cellsize -1, cellsize -1, colors[cellvalue]);
+            DrawRectangle(col * cellsize, row * cellsize, cellsize - 1,
+                          cellsize - 1, colors[cellvalue]);
         }
     }
 }
 
-bool Grid::IsOutOfBounds(int row, int col){
-    if(row < 0 || row >= numRows || col < 0 || col >= numCols){
+bool Grid::IsOutOfBounds(int row, int col) {
+    if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
         return true;
     }
     return false;
 }
+
+bool Grid::IsCellEmpty(int row, int col) {
+    if (grid[row][col] == 0) {
+        return true;
+    }
+    return false;
+};

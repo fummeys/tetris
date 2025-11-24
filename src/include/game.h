@@ -24,5 +24,6 @@ class Game {
         bool IsOutOfBounds();
         void RotateBlock();
         void LockBlock();
+        bool BlockFits();
 };
 

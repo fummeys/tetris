@@ -10,6 +10,7 @@ class Grid {
     void PrintGrid();
     void Draw();
     bool IsOutOfBounds(int row, int col);
+    bool IsCellEmpty(int row, int col);
 
   private:
     int numRows;
