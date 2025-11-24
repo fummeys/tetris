@@ -1,7 +1,7 @@
+#include "block.h"
 #include "grid.h"
-#include <raylib.h>
-#include "elements/blocks.cpp"
 #include "colors.h"
+#include <raylib.h>
 
 int main() {
     InitWindow(400, 800, "Tetrica");
