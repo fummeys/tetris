@@ -71,6 +71,7 @@ void Game::MoveDown() {
     if (IsOutOfBounds() || BlockFits() == false) {
         currentBlock.Move(-1, 0);
         LockBlock();
+        grid.ClearFullRows();
     }
 }
 
