@@ -44,7 +44,7 @@ void Game::HandleInput() {
         MoveRight();
         break;
     case KEY_DOWN:
-        MoveDown();
+        DropBlock();
         break;
     case KEY_UP:
         RotateBlock();
@@ -72,6 +72,18 @@ void Game::MoveDown() {
         currentBlock.Move(-1, 0);
         LockBlock();
         grid.ClearFullRows();
+    }
+}
+
+void Game::DropBlock() {
+    while (true) {
+        currentBlock.Move(1, 0);
+        if (IsOutOfBounds() || BlockFits() == false) {
+            currentBlock.Move(-1, 0);
+            LockBlock();
+            grid.ClearFullRows();
+            break;
+        }
     }
 }
 
