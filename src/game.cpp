@@ -3,6 +3,7 @@
 
 #include <raylib.h>
 #include <stdlib.h>
+#include <vector>
 
 Game::Game() {
     grid = Grid();
@@ -69,6 +70,7 @@ void Game::MoveDown() {
     currentBlock.Move(1, 0);
     if (IsOutOfBounds()) {
         currentBlock.Move(-1, 0);
+        LockBlock();
     }
 }
 
@@ -87,4 +89,14 @@ void Game::RotateBlock(){
     if(IsOutOfBounds()){
         currentBlock.UndoRotation();
     }
+}
+
+void Game::LockBlock(){
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
+    for(Position item: tiles){
+        grid.grid[item.row][item.col] = currentBlock.id;
+    }
+    currentBlock = nextBlock;
+    nextBlock = GetRandomBlock();
+
 }
