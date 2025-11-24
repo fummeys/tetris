@@ -9,7 +9,8 @@ int main() {
 
     Grid grid = Grid();
 
-    LBlock block = LBlock();
+    IBlock block = IBlock();
+    // block.Move(10, 3);
 
     while (!WindowShouldClose()) {
         BeginDrawing();

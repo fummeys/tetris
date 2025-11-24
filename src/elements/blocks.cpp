@@ -7,6 +7,7 @@ LBlock::LBlock() : Block() {
     cells[1] = {Position(0, 1), Position(1, 1), Position(2, 1), Position(2, 2)};
     cells[2] = {Position(1, 0), Position(1, 1), Position(1, 2), Position(2, 0)};
     cells[3] = {Position(0, 0), Position(0, 1), Position(1, 1), Position(2, 1)};
+    Move(0,3);
 };
 
 JBlock::JBlock() : Block() {
@@ -15,6 +16,7 @@ JBlock::JBlock() : Block() {
     cells[1] = {Position(0, 1), Position(0, 2), Position(1, 1), Position(2, 1)};
     cells[2] = {Position(1, 0), Position(1, 1), Position(1, 2), Position(2, 2)};
     cells[3] = {Position(0, 1), Position(1, 1), Position(2, 0), Position(2, 1)};
+    Move(0,3);
 }
 
 IBlock::IBlock() : Block() {
@@ -23,11 +25,13 @@ IBlock::IBlock() : Block() {
     cells[1] = {Position(0, 2), Position(1, 2), Position(2, 2), Position(3, 2)};
     cells[2] = {Position(2, 0), Position(2, 1), Position(2, 2), Position(2, 3)};
     cells[3] = {Position(0, 1), Position(1, 1), Position(2, 1), Position(3, 1)};
+    Move(-1,3);
 }
 
 OBlock::OBlock() : Block() {
     id = 4;
     cells[0] = {Position(0, 0), Position(0, 1), Position(1, 0), Position(1, 1)};
+    Move(0,4);
 }
 
 SBlock::SBlock() : Block() {
@@ -36,6 +40,7 @@ SBlock::SBlock() : Block() {
     cells[1] = {Position(0, 1), Position(1, 1), Position(1, 2), Position(2, 2)};
     cells[2] = {Position(1, 1), Position(1, 2), Position(2, 0), Position(2, 1)};
     cells[3] = {Position(0, 0), Position(1, 0), Position(1, 1), Position(2, 1)};
+    Move(0,3);
 }
 
 TBlock::TBlock() : Block() {
@@ -44,6 +49,7 @@ TBlock::TBlock() : Block() {
     cells[1] = {Position(0, 1), Position(1, 1), Position(1, 2), Position(2, 1)};
     cells[2] = {Position(1, 0), Position(1, 1), Position(1, 2), Position(2, 1)};
     cells[3] = {Position(0, 1), Position(1, 0), Position(1, 1), Position(2, 1)};
+    Move(0,3);
 }
 
 ZBlock::ZBlock() : Block() {
@@ -52,4 +58,5 @@ ZBlock::ZBlock() : Block() {
     cells[1] = {Position(0, 2), Position(1, 1), Position(1, 2), Position(2, 1)};
     cells[2] = {Position(1, 0), Position(1, 1), Position(2, 1), Position(2, 2)};
     cells[3] = {Position(0, 1), Position(1, 0), Position(1, 1), Position(2, 0)};
+    Move(0,3);
 }
