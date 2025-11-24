@@ -8,10 +8,12 @@ class Block {
     public:
         Block();
         int id;
-        std::map<int, std::vector<Position>> cells;
+        std::map<int, std::vector<Position>> orientation;
         void Draw();
         void Move(int rows, int cols);
         std::vector<Position> GetCellPositions();
+        void Rotate();
+        void UndoRotation();
 
     private:
         int cellSize;

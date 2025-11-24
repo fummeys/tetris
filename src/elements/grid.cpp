@@ -39,7 +39,6 @@ void Grid::Draw(){
 
 bool Grid::IsOutOfBounds(int row, int col){
     if(row < 0 || row >= numRows || col < 0 || col >= numCols){
-        std::printf("outside \n");
         return true;
     }
     return false;

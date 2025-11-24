@@ -12,6 +12,7 @@ int main() {
         BeginDrawing();
         ClearBackground(darkBlue);
         game.HandleInput();
+        game.MoveDown();
         game.Draw();
         EndDrawing();
     }
