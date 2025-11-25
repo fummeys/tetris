@@ -10,6 +10,7 @@ class Game {
         Game();
         Grid grid;
         bool gameOver;
+        int score;
         Block GetRandomBlock();
         std::vector<Block> ResetBlocks();
         void Draw();
@@ -18,6 +19,7 @@ class Game {
         void MoveRight();
         void MoveDown();
         void DropBlock();
+
 
     private:
         std::vector<Block> blocks;
@@ -28,5 +30,6 @@ class Game {
         void LockBlock();
         bool BlockFits();
         void ResetGame();
+        void UpdateScore(int linescleared, int movepoint);
 };
 
