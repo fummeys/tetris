@@ -7,7 +7,6 @@ class Grid {
     Grid();
     int grid[20][10];
     void InitGrid();
-    void PrintGrid();
     void Draw();
     bool IsOutOfBounds(int row, int col);
     bool IsCellEmpty(int row, int col);

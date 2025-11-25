@@ -2,34 +2,41 @@
 
 #include "block.h"
 #include "grid.h"
+#include "raylib.h"
 
 #include <vector>
 
 class Game {
     public:
         Game();
-        Grid grid;
+        ~Game();
         bool gameOver;
         int score;
-        Block GetRandomBlock();
-        std::vector<Block> ResetBlocks();
+        Music music;
+        bool isPaused;
         void Draw();
         void HandleInput();
-        void MoveLeft();
-        void MoveRight();
         void MoveDown();
-        void DropBlock();
-
 
     private:
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
+        Grid grid;
+        Sound rotateSound;
+        Sound clearSound;
+        Sound dropSound;
+
+        void DropBlock();
+        Block GetRandomBlock();
+        std::vector<Block> ResetBlocks();
+        void MoveLeft();
+        void MoveRight();
         bool IsOutOfBounds();
         void RotateBlock();
         void LockBlock();
         bool BlockFits();
         void ResetGame();
         void UpdateScore(int linescleared, int movepoint);
+        void TogglePause();
 };
-
