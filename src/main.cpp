@@ -15,6 +15,7 @@ int main() {
         BeginDrawing();
         ClearBackground(darkBlue);
         game.HandleInput();
+
         if (BlockDrop(0.8, game.isPaused)) {
             game.MoveDown();
         }
@@ -34,6 +35,11 @@ int main() {
         if (game.gameOver) {
             DrawTextEx(font, "Game Over", {430, 400}, 28, 2, WHITE);
         }
+
+        if (game.isPaused) {
+            DrawTextEx(font, "Game Paused", {430, 400}, 28, 2, WHITE);
+        }
+
         UpdateMusicStream(game.music);
         game.Draw();
         EndDrawing();

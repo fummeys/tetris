@@ -65,12 +65,12 @@ void Game::Draw() {
 void Game::HandleInput() {
     int keypressed = GetKeyPressed();
 
-    if (gameOver && keypressed == KEY_SPACE) {
+    if (gameOver && keypressed == KEY_ENTER) {
         ResetGame();
         return;
     }
 
-    if (isPaused && keypressed == KEY_SPACE) {
+    if (keypressed == KEY_SPACE) {
         TogglePause();
         return;
     }
@@ -219,4 +219,12 @@ void Game::UpdateScore(int linescleared, int movepoint) {
     }
 }
 
-void Game::TogglePause() { isPaused = !isPaused; }
+void Game::TogglePause() {
+
+    isPaused = !isPaused;
+    if (isPaused == true) {
+        PauseMusicStream(music);
+    } else {
+        PlayMusicStream(music);
+    }
+}

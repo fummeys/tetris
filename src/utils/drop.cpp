@@ -5,7 +5,8 @@ double lastUpdate = 0;
 
 
 bool BlockDrop(double interval, bool paused){
-    if(paused) return  false;
+    if(paused == true) return  false;
+
     double currentTime = GetTime();
     if(currentTime - lastUpdate >= interval){
         lastUpdate = currentTime;
