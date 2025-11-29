@@ -45,6 +45,7 @@ int main() {
         EndDrawing();
     }
 
+    UnloadFont(font);
     CloseWindow();
     return 0;
 }
